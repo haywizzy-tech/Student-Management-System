@@ -1,0 +1,22 @@
+1774806484593:createStudent
+1774806821244:createStudent "dayo" "dayo@yopmail.com"
+1774806934110:add "sayo" "sayo@yop.com"
+1774807035671:add "sayo" "biola"
+1774807050647:create "bola" "adelow@gmail.com"
+1774807257656:help
+1774807325421:hhelp
+1774807423238:create "taofeek moses" "tao@fik.com"
+1774808583484:all
+1774814140374:create "physics"
+1774814356551:course/help
+1774814387884:course/all
+1774815101222:student/create "bayo" "bobob@yopmail.com"
+1774815437756:student/all
+1774818235768:enroll/user 2 3
+1774818275801:student/create "bayo" "bayo@gmail.com"
+1774818299530:course/create "biology"
+1774818309353:student/all
+1774818318676:course/all
+1774818326276:enroll/user 1 1
+1774820758021:student/all/courses
+1774820922809:student/all/course
