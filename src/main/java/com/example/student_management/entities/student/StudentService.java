@@ -1,5 +1,6 @@
 package com.example.student_management.entities.student;
 
+import com.example.student_management.entities.student.dto.StudentsWithCourses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,15 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    public void createStudent(Student student) {
+    public void createStudent (String name, String email) {
+        Students student = new Students();
+
+        student.setName(name);
+        student.setEmail(email);
         studentRepository.save(student);
     }
 
-    public List<Student> getAllStudents() {
+    public List<Students> getAllStudents() {
         return studentRepository.getAll();
     }
 

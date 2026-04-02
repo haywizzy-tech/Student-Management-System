@@ -2,19 +2,15 @@ package com.example.student_management.entities.course;
 
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@Builder
 @ToString
-public class Course {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Courses {
 
     private Long id;
-
     private String title;
 
-    public Course(String title){
-        this.title = title;
-    }
+
 }

@@ -1,8 +1,11 @@
 package com.example.student_management.entities.student;
 
+import com.example.student_management.entities.student.dto.StudentsWithCourses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,27 +14,33 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/student")
-@RestController
+@ShellComponent
 public class StudentController {
 
     private final StudentService studentService;
 
-    @PostMapping("/save")
-    public ResponseEntity<String> createStudent(@RequestBody Student student) {
+    @ShellMethod(key = "add", value = "addStudent")
+    public String createStudent( String name, String email ) {
 
-        studentService.createStudent(student);
+        studentService.createStudent( name, email);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body("User saved successfully");
+        return "User saved successfully";
     }
 
-    @PostMapping("/all")
-    public ResponseEntity<List<Student>> getAllStudents() {
+    @ShellMethod(key="get", value = "get all student")
+    public List<Students> getAllStudents() {
 
-        final var allStudents = studentService.getAllStudents();
-
-        return ResponseEntity.status(HttpStatus.OK).body(allStudents);
+        return studentService.getAllStudents();
 
     }
+
+    @ShellMethod(key="getStudentCourses", value = "get all student")
+    public List<StudentsWithCourses> getAllStudentsWithCourses() {
+
+        return studentService.getStudentsWithCourses();
+
+    }
+
+
 
 }

@@ -1,5 +1,6 @@
 package com.example.student_management.entities.course;
 
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,13 +10,15 @@ import java.util.List;
 @Service
 public class CourseService {
 
-    private final CourseRepository courseRepository;
+    private final CoursesRepository courseRepository;
 
-    public void addCourse(Course course) {
-        courseRepository.save(course);
+    public void addCourse( String title) {
+        Courses courses = new Courses();
+        courses.setTitle(title);
+        courseRepository.save(courses);
     }
 
-    public List<Course> getAllCourses() {
+    public List<Courses> getAllCourses() {
         return courseRepository.getAll();
     }
 

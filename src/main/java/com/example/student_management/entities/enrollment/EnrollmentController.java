@@ -1,23 +1,22 @@
 package com.example.student_management.entities.enrollment;
 
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/enrollment")
-@RestController
+@ShellComponent
 public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;
 
-    @PutMapping("/course/{courseId}/user/{userId}")
-    public ResponseEntity<String> enrollUser(@PathVariable Long userId, @PathVariable Long courseId) {
 
+    @ShellMethod(value = "Enroll user to course", key = "enroll")
+    public String enroll(Long userId, Long courseId) {
         enrollmentService.enrollStudent(userId, courseId);
-        return ResponseEntity.ok("User enrolled successfully");
+
+        return "User enrolled";
     }
+
 }

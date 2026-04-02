@@ -1,6 +1,6 @@
 Student Management System (CLI)
 
-📌 Overview
+Overview
 
 The Student Management System is a Command-Line Interface (CLI) application built using Java and MySQL.
 It allows users to manage students and courses, including adding records and viewing stored data.
@@ -14,17 +14,17 @@ This project demonstrates:
 
 ---
 
-🚀 Features
+Features
 
-- ➕ Add new students
-- 📚 Add new courses
-- 👀 View all students
-- 📖 View all courses
-- 💾 Persistent data storage using MySQL
+-  Add new students
+-  Add new courses
+-  View all students
+-  View all courses
+-  Persistent data storage using MySQL
 
 ---
 
-🏗️ Project Structure
+Project Structure
 
 src/
  ├── Main.java
@@ -39,7 +39,7 @@ src/
 
 ---
 
-⚙️ Technologies Used
+Technologies Used
 
 - Java (JDK 17+)
 - MySQL
@@ -48,7 +48,7 @@ src/
 
 ---
 
-🗄️ Database Setup
+Database Setup
 
 Step 1: Create Database
 
@@ -70,19 +70,22 @@ CREATE TABLE courses (
 
 ---
 
-🔌 Configuration
+Configuration
 
 Update your database credentials in:
 
 "DBConnection.java"
 
-private static final String URL = "jdbc:mysql://localhost:3306/school_db";
-private static final String USER = "root";
-private static final String PASSWORD = "";
+spring.datasource.url=jdbc:mysql://localhost:3306/school
+spring.datasource.username=******
+spring.datasource.password=*******
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.shell.interactive.enabled=true
 
 ---
 
-▶️ How to Run the Project
+How to Run the Project
 
 1. Open project in IntelliJ IDEA
 2. Ensure MySQL server is running
@@ -91,7 +94,7 @@ private static final String PASSWORD = "";
 
 ---
 
-🧪 Sample Menu
+Sample Menu
 
 1. Add Student
 2. Add Course
@@ -101,7 +104,7 @@ private static final String PASSWORD = "";
 
 ---
 
-🔁 Git Setup (Optional)
+Git Setup (Optional)
 
 git init
 git add .
@@ -111,7 +114,7 @@ git push -u origin main
 
 ---
 
-📈 Future Improvements
+Future Improvements
 
 - Enroll students in courses
 - Update and delete records
